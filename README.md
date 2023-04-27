@@ -1,4 +1,4 @@
-# SkillTest_django-rest-framework_vuejs
+# SkillTest_django-rest-framework_vue.js
 
 ## Built With
 
