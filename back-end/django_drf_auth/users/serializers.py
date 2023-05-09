@@ -12,7 +12,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     def save(self):
         user = MyUser(
-            email=self.validated_data["email"],
+            email=self.validated_data['email'],
             first_name = self.validated_data['first_name'],
             last_name = self.validated_data['last_name']
         )
@@ -41,7 +41,18 @@ class PasswordChangeSerializer(serializers.Serializer):
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
+    #technology_name = serializers.ListField(child=serializers.CharField())
+
     class Meta:
         model = UserProfile
-        exclude = ('is_active', 'is_delete', 'created_at', 'updated_at')
+        fields = ['user_id', 'profile_pic', 'phone', 'designation', 'experiance', 'interest', 'technology_name']
+        #fields = ['user_id', 'profile_pic', 'phone', 'designation', 'experiance', 'interest']
+        #exclude = ('is_active', 'is_delete', 'created_at', 'updated_at')
+
+
+class MyUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MyUser
+        fields = ['id', 'email', 'first_name', 'last_name']
+
 

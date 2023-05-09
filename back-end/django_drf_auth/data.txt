@@ -1,0 +1,36 @@
+{
+    "email":"vue@vue.com",
+    "first_name":"vue",
+    "last_name":"vuetify",
+    "password":"Smart@123",
+    "password2":"Smart@123"
+}
+;;
+{
+    "email":"hunk@re.com",
+    "password":"nerovergil"
+}
+
+{
+    "email":"nero@dmc.com",
+    "password":"nerovergil"
+}
+
+{
+    "email":"nero@dmc.com",
+    "password":"nerovergil",
+    "password2":"nerovergil",
+}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4MjU4ODg3MCwiaWF0IjoxNjgxMjkyODcwLCJqdGkiOiIxZmM1NTk3ZjNjYzg0OTdkOGJlODk0YWE3MjczNDQ2OSIsInVzZXJfaWQiOjJ9.cn0ISJfAz5DEM0v8UQW7fywDtKCjflkrd1DrdRzCTOo
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgxMjkzMTcwLCJpYXQiOjE2ODEyOTI4NzAsImp0aSI6IjkwMjIzYzU3ZWY5ZjQyZmU4NjkwZjdhMDVkMzA1ZmY2IiwidXNlcl9pZCI6Mn0.1NHYHBnM9LJ0VaGFPzwc--VNe65wj2ONj25HABco9Es
+
+
+'Droid Sans Mono', 'monospace', monospace
+
+'FiraCode NFM Medium'
+
+'JetBrains Mono Light'
+
+'CaskaydiaCove Nerd Font SemiBold Italic'

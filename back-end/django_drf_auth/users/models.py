@@ -4,6 +4,11 @@ from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 from django.utils import timezone
 from django.core.validators import RegexValidator
 
+from .utils import user_profile_pic_path
+
+from django.contrib.postgres.fields import ArrayField, JSONField
+
+
 # Create your models here
 class MyUserManager(BaseUserManager):
     def create_user(self, email, password=None):
@@ -70,7 +75,6 @@ class MyUser(AbstractBaseUser):
         return self.is_admin
 
 
-
 class Role(models.Model):
     id = models.AutoField(primary_key=True)
     role = models.CharField(max_length=255)
@@ -80,8 +84,7 @@ class Role(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.id}, {self.role}'    
-
+        return f'{self.id}, {self.role}'
 
     class Meta:
         db_table = 'Role'
@@ -94,19 +97,23 @@ class UserProfile(models.Model):
     )
 
     id = models.AutoField(primary_key=True)
+    profile_pic = models.ImageField(upload_to=user_profile_pic_path, blank=True)
     user_id = models.OneToOneField(MyUser, on_delete=models.CASCADE)
     role_id = models.ForeignKey(Role, on_delete=models.CASCADE, default=2)
     phone = models.CharField(validators=[phone_regex], max_length=17, blank=True, default=+000000000)
     designation = models.CharField(max_length=50, default="None")
     experiance = models.IntegerField(default=0)
     interest = models.CharField(max_length=200, default="None")
+    #preferred_tech = models.CharField(max_length=200, default="General")
+    technology_name = models.CharField(max_length=200, default="General")
+    #technology_name = ArrayField(models.CharField(max_length=200))
+    #technology_name = ArrayField(models.CharField(max_length=200, default=["General"]))
     is_active = models.BooleanField(default=True)
     is_delete = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        #return f'{self.id}, {self.user_id}'
         return f'{self.id}, {self.user_id}, {self.role_id}'
     
     class Meta:

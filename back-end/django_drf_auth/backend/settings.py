@@ -56,12 +56,15 @@ INSTALLED_APPS = [
 
     "users.apps.UsersConfig",
     'skilltest.apps.SkilltestConfig',
-    'sessiontest.apps.SessiontestConfig',
+    #'sessiontest.apps.SessiontestConfig',
+    'quesapp.apps.QuesappConfig',
 
     "rest_framework",
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
+    
 ]
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -98,12 +101,43 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+"""
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+"""
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+
+
+# ------------
+
+"""
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'skill',                              # databaseName
+        'USER': 'root',
+        'PASSWORD': 'SmartWork_567', 
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
+"""
+
+
 
 
 # Password validation
